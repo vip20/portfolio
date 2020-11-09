@@ -1,6 +1,6 @@
-import { faFontAwesome, IconName } from "@fortawesome/free-brands-svg-icons";
+import { IconName } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { NavbarSetup } from "../../core/types";
 import "./CustNavbar.css";
