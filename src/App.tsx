@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./components/home/Home";
-import "./App.css";
+import "./App.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   fab,
@@ -9,8 +9,9 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faMapMarker } from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab, faGithub, faTwitter, faLinkedin);
+library.add(fab, faGithub, faTwitter, faLinkedin, faEnvelope, faMapMarker);
 function App() {
   return (
     <React.Fragment>

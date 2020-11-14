@@ -1,3 +1,12 @@
+html,
+body {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
 .heading {
   font-size: 28px !important;
 }
@@ -7,6 +16,14 @@
 .grey-dark-2 {
   color: rgba(0, 0, 0, 0.9);
 }
+.grey-dark-3 {
+  color: #474747;
+}
+
+.p-24 {
+  padding: 24px;
+}
+
 .m-0 {
   margin: 0px;
 }
@@ -21,4 +38,11 @@
 
 .m-r-8 {
   margin-right: 8px;
+}
+.m-b-16 {
+  margin-bottom: 16px;
+}
+
+.nav {
+  height: 68px;
 }

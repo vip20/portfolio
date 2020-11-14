@@ -1,0 +1,72 @@
+@import "../../theme.scss";
+.profile-image {
+  margin-right: 5%;
+}
+.img-border {
+  height: 340px;
+  width: 340px;
+  border: 20px solid rgba(0, 0, 0, 0.07);
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.hero-img {
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+  border: 20px solid rgba(0, 0, 0, 0.17);
+  border-radius: 50%;
+}
+.profile-container {
+  padding: 180px 0px;
+  &.is-mobile {
+    padding: 60px 0px;
+  }
+}
+.message-info {
+  * {
+    padding-left: 0px;
+    margin-bottom: 8px;
+  }
+  .message-bubble {
+    background-color: $accent;
+    color: white;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    width: fit-content;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 60px;
+  }
+  h4 {
+    font-size: 26px;
+    line-height: 34px;
+    margin-bottom: 28px;
+  }
+}
+.list-style {
+  a {
+    height: 20px;
+    display: flex;
+    .icon {
+      width: 0.4em;
+    }
+    color: black;
+    &:hover {
+      text-decoration: none;
+      .icon {
+        color: $accent;
+      }
+    }
+  }
+  list-style-type: none;
+  width: fit-content;
+}
