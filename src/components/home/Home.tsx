@@ -1,9 +1,11 @@
 import React from "react";
 import { APP_CONST } from "../../core/constants";
+import useSticky from "../../hooks/useSticky";
 import { CustNavbar } from "../custnavbar/CustNavbar";
 import { Profile } from "../profile/Profile";
 
 export const Home = () => {
+  const { isSticky, element } = useSticky();
   // const [imageUrl, setImageUrl] = useState("");
   const homeConst = APP_CONST.home;
   // useEffect(() => {
@@ -20,10 +22,11 @@ export const Home = () => {
   //   );
   // });
   return (
-    <div className="p-24 full-height">
-      <CustNavbar appConst={homeConst}></CustNavbar>
-
-      <Profile appConst={homeConst}></Profile>
+    <div className=" full-height">
+      <CustNavbar appConst={homeConst} isSticky={isSticky}></CustNavbar>
+      <div ref={element}>
+        <Profile appConst={homeConst}></Profile>
+      </div>
     </div>
   );
 };
