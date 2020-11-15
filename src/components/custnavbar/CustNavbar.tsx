@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { NavbarSetup } from "../../core/types";
@@ -6,8 +6,20 @@ import "./CustNavbar.scss";
 
 export const CustNavbar = (props: any) => {
   let navConst: NavbarSetup = props.appConst.nav;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
+
+  useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => {
+        const ismobile = window.innerWidth < 1200;
+        if (ismobile !== isMobile) setIsMobile(ismobile);
+      },
+      false
+    );
+  }, [isMobile]);
   return (
-    <Container>
+    <Container className={isMobile ? "is-mobile" : ""}>
       <Navbar bg="light" expand="lg">
         {navConst.brand && (
           <Navbar.Brand as={Link} to={navConst.brand.path} className="heading">
@@ -25,7 +37,7 @@ export const CustNavbar = (props: any) => {
                       {sl.name}
                       {/* <FontAwesomeIcon
                         icon={["fab", sl.fa_icon as IconName]}
-                        className="heading grey-dark-2 m-r-8"
+                        className="heading m-r-8"
                       /> */}
                     </Nav.Link>
                   );

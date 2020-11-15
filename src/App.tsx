@@ -9,9 +9,21 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faMapMarker } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faMapMarkerAlt,
+  faPhoneAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab, faGithub, faTwitter, faLinkedin, faEnvelope, faMapMarker);
+library.add(
+  fab,
+  faGithub,
+  faTwitter,
+  faLinkedin,
+  faEnvelope,
+  faMapMarkerAlt,
+  faPhoneAlt
+);
 function App() {
   return (
     <React.Fragment>

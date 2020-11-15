@@ -1,9 +1,17 @@
+@import "../../theme.scss";
 .navbar-light {
   background-color: white !important;
+  .navbar-brand {
+    color: $pastel1;
+  }
 }
 .navbar-nav {
   flex: 1 1 auto;
 }
 .navbar {
+  padding: 0px;
+}
+
+.is-mobile {
   padding: 0px;
 }

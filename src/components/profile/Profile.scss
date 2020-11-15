@@ -8,18 +8,31 @@
   border: 20px solid rgba(0, 0, 0, 0.07);
   margin: 0 auto;
   border-radius: 50%;
-}
-.hero-img {
-  margin: 0 auto;
-  float: none;
-  text-align: center;
-  border: 20px solid rgba(0, 0, 0, 0.17);
-  border-radius: 50%;
+  .hero-img {
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+    border: 20px solid rgba(0, 0, 0, 0.17);
+    border-radius: 50%;
+  }
+  &.is-mobile {
+    height: 280px;
+    width: 280px;
+    .hero-img {
+      height: 240px;
+      width: 240px;
+    }
+  }
 }
 .profile-container {
   padding: 180px 0px;
   &.is-mobile {
-    padding: 60px 0px;
+    padding: 30px 0px;
+    .order-md-1.order-2 {
+      margin-top: 24px;
+    }
   }
 }
 .message-info {
@@ -28,8 +41,7 @@
     margin-bottom: 8px;
   }
   .message-bubble {
-    background-color: $accent;
-    color: white;
+    background-color: $pastel3;
     font-size: 14px;
     line-height: 24px;
     letter-spacing: 1px;
@@ -49,7 +61,7 @@
   h4 {
     font-size: 26px;
     line-height: 34px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 }
 .list-style {
@@ -59,14 +71,31 @@
     .icon {
       width: 0.4em;
     }
-    color: black;
+    color: $pastel1;
     &:hover {
       text-decoration: none;
       .icon {
-        color: $accent;
+        color: $pastel3;
       }
     }
   }
   list-style-type: none;
   width: fit-content;
+}
+ul.social-links {
+  margin-top: 28px;
+  display: flex;
+  place-content: space-between;
+  width: 180px;
+  .list-style {
+    .icon {
+      width: 1em;
+      padding: 4px;
+      border-radius: 10%;
+      &:hover {
+        background-color: $pastel1;
+        transition: 0.3s;
+      }
+    }
+  }
 }

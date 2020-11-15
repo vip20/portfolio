@@ -1,3 +1,4 @@
+@import "theme.scss";
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -11,3 +12,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.pastel-1 {
+  color: $pastel1;
+}
+.pastel-2 {
+  color: $pastel2;
+}
+.pastel-3 {
+  color: $pastel3;
+}
+.pastel-4 {
+  color: $pastel4;
+}
+
+/* stylesheet.scss */
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+/* Your customizations here */
+
+$body-color: $pastel1;
+$navbar-light-disabled-color: $pastel2;
+$navbar-light-active-color: $pastel1;
+$navbar-light-hover-color: $pastel1;
+$navbar-light-toggler-border-color: white;
+
+@import "node_modules/bootstrap/scss/bootstrap";

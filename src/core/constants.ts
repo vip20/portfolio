@@ -28,7 +28,12 @@ export const defaultContactList: SocialLink[] = [
     url: "mailto:pvinayvinu20@gmail.com",
   },
   {
-    fa_icon: "map-marker",
+    fa_icon: "phone-alt",
+    name: "+91 8892764958",
+    url: "callto:+918892764958",
+  },
+  {
+    fa_icon: "map-marker-alt",
     name: "Bangalore, Karnataka, India",
   },
 ];
@@ -56,6 +61,7 @@ export const APP_CONST: AppSetup = {
       },
       profilePic: "photos/vinay_1.jpg",
       contactLinks: defaultContactList,
+      socialLinks: defaultSocialLinks,
     },
     nav: {
       ...defaultNavBar,

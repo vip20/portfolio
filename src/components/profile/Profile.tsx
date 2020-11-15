@@ -29,22 +29,36 @@ export const Profile = (props: any) => {
       <Container>
         <Row>
           <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }}>
-            <FadeIn className="message-info grey-dark-3">
+            <FadeIn className="message-info">
               <div className="message-bubble">
                 {profileConst.personalDetails.bubbleMessage}
               </div>
               <h2>{profileConst.personalDetails.name}</h2>
               <h4 className="m-b-16">{profileConst.personalDetails.role}</h4>
               <ul>
-                {profileConst.contactLinks?.map((cl) => {
+                {profileConst.contactLinks?.map((cl, i) => {
                   return (
-                    <li className="list-style">
+                    <li className="list-style" key={i + "cl"}>
                       <a href={cl.url}>
                         <FontAwesomeIcon
                           icon={cl.fa_icon as IconName}
-                          className="heading grey-dark-2 m-r-8 icon"
+                          className="heading m-r-8 icon"
                         />
                         {cl.name}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+              <ul className="social-links">
+                {profileConst.socialLinks?.map((sl, i) => {
+                  return (
+                    <li className="list-style" key={i + "sl"}>
+                      <a href={sl.url}>
+                        <FontAwesomeIcon
+                          icon={["fab", sl.fa_icon as IconName]}
+                          className="heading m-r-8 icon"
+                        />
                       </a>
                     </li>
                   );
@@ -54,13 +68,11 @@ export const Profile = (props: any) => {
           </Col>
           <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }}>
             <FadeIn>
-              <div className="img-border">
+              <div className={isMobile ? "is-mobile img-border" : "img-border"}>
                 <Image
                   className="
             hero-img"
                   src={profilePic}
-                  width="300px"
-                  height="300px"
                   roundedCircle
                 />
               </div>
