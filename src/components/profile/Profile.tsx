@@ -35,7 +35,7 @@ export const Profile = (props: any) => {
               </div>
               <h2>{profileConst.personalDetails.name}</h2>
               <h4 className="m-b-16">{profileConst.personalDetails.role}</h4>
-              <ul>
+              <ul className="contact-links">
                 {profileConst.contactLinks?.map((cl, i) => {
                   return (
                     <li className="list-style" key={i + "cl"}>
@@ -54,7 +54,11 @@ export const Profile = (props: any) => {
                 {profileConst.socialLinks?.map((sl, i) => {
                   return (
                     <li className="list-style" key={i + "sl"}>
-                      <a href={sl.url}>
+                      <a
+                        href={sl.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <FontAwesomeIcon
                           icon={["fab", sl.fa_icon as IconName]}
                           className="heading m-r-8 icon"
@@ -68,7 +72,7 @@ export const Profile = (props: any) => {
           </Col>
           <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }}>
             <FadeIn>
-              <div className={isMobile ? "is-mobile img-border" : "img-border"}>
+              <div className="img-border">
                 <Image
                   className="
             hero-img"
