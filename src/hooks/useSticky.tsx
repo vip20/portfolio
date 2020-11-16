@@ -31,7 +31,6 @@ function useSticky() {
       window.removeEventListener("scroll", () => handleScroll);
     };
   }, [debounce, handleScroll]);
-  console.log("st", isSticky);
 
   return { isSticky, element };
 }

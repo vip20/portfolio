@@ -40,15 +40,15 @@ export const defaultContactList: SocialLink[] = [
 export const defaultNavLinks: CustomNavLink[] = [
   {
     name: "Home",
-    url: "/",
+    url: "/#home",
   },
   {
     name: "About",
-    url: "/about",
+    url: "/#about",
   },
   {
     name: "Skills",
-    url: "/skills",
+    url: "/#skills",
   },
 ];
 export const APP_CONST: AppSetup = {

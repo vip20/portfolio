@@ -14,6 +14,7 @@ import {
   faMapMarkerAlt,
   faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { ResponsiveProvider } from "./hooks/useResponsive";
 
 library.add(
   fab,
@@ -27,11 +28,13 @@ library.add(
 function App() {
   return (
     <React.Fragment>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home}></Route>
-        </Switch>
-      </Router>
+      <ResponsiveProvider>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home}></Route>
+          </Switch>
+        </Router>
+      </ResponsiveProvider>
     </React.Fragment>
   );
 }

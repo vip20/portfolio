@@ -25,7 +25,11 @@ export const Home = () => {
     <div className=" full-height">
       <CustNavbar appConst={homeConst} isSticky={isSticky}></CustNavbar>
       <div ref={element}>
-        <Profile appConst={homeConst}></Profile>
+        <section id="home">
+          <Profile appConst={homeConst}></Profile>
+        </section>
+        <section id="about"></section>
+        <section id="skills"></section>
       </div>
     </div>
   );

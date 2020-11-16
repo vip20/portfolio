@@ -7,25 +7,18 @@ import profilePic from "../../assets/vinay_1.jpg";
 import FadeIn from "react-fade-in";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
+import useResponsive from "../../hooks/useResponsive";
+import classNames from "classnames";
 
 export const Profile = (props: any) => {
   let profileConst: ProfileSetup = props.appConst.profile;
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
-
-  useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => {
-        const ismobile = window.innerWidth < 1200;
-        if (ismobile !== isMobile) setIsMobile(ismobile);
-      },
-      false
-    );
-  }, [isMobile]);
+  const { width, height } = useResponsive();
+  let profileClass = classNames({
+    "is-mobile": width < 1200,
+    "profile-container": true,
+  });
   return (
-    <div
-      className={isMobile ? "is-mobile profile-container" : "profile-container"}
-    >
+    <div className={profileClass}>
       <Container>
         <Row>
           <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }}>
