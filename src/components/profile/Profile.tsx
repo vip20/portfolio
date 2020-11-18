@@ -4,7 +4,6 @@ import Image from "react-bootstrap/Image";
 import { ProfileSetup } from "../../core/types";
 import "./Profile.scss";
 import profilePic from "../../assets/vinay_1.jpg";
-import FadeIn from "react-fade-in";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 import useResponsive from "../../hooks/useResponsive";

@@ -1,9 +1,8 @@
 import classNames from "classnames";
-import React, { useRef } from "react";
+import React from "react";
 import FadeIn from "react-fade-in";
 import { APP_CONST } from "../../core/constants";
 import useResponsive from "../../hooks/useResponsive";
-import { useScrollSpy } from "../../hooks/useScrollspy";
 import useSticky from "../../hooks/useSticky";
 import { About } from "../about/About";
 import { CustNavbar } from "../custnavbar/CustNavbar";
@@ -27,11 +26,7 @@ export const Home = () => {
   //     }
   //   );
   // });
-  const sectionRefs = [useRef(null), useRef(null), useRef(null)];
 
-  const activeSection = useScrollSpy({
-    sectionElementRefs: sectionRefs,
-  });
   const { width } = useResponsive();
   let sectionCntrClass = classNames({
     "is-mobile": width < 768,
@@ -39,24 +34,18 @@ export const Home = () => {
   });
   return (
     <div className=" full-height">
-      <CustNavbar
-        appConst={homeConst}
-        isSticky={isSticky}
-        activeSection={activeSection}
-      ></CustNavbar>
-      <FadeIn ref={element}>
-        <section id="home" className={sectionCntrClass} ref={sectionRefs[0]}>
-          <Profile appConst={homeConst}></Profile>
-        </section>
-        <section id="about" className={sectionCntrClass} ref={sectionRefs[1]}>
-          <About appConst={homeConst}></About>
-        </section>
-        <section
-          id="skills"
-          className={sectionCntrClass}
-          ref={sectionRefs[2]}
-        ></section>
-      </FadeIn>
+      <CustNavbar appConst={homeConst} isSticky={isSticky}></CustNavbar>
+      <div ref={element}>
+        <FadeIn>
+          <section id="home" className={sectionCntrClass}>
+            <Profile appConst={homeConst}></Profile>
+          </section>
+          <section id="about" className={sectionCntrClass}>
+            <About appConst={homeConst}></About>
+          </section>
+          <section id="skills" className={sectionCntrClass}></section>
+        </FadeIn>
+      </div>
     </div>
   );
 };

@@ -4,8 +4,9 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { NavbarSetup } from "../../core/types";
 import "./CustNavbar.scss";
+import * as Scroll from "react-scroll";
 
-export const CustNavbar = ({ appConst, isSticky, activeSection }: any) => {
+export const CustNavbar = ({ appConst, isSticky }: any) => {
   let navConst: NavbarSetup = appConst.nav;
   let navBarClass = classNames({
     "navbar-sticky": isSticky,
@@ -35,12 +36,18 @@ export const CustNavbar = ({ appConst, isSticky, activeSection }: any) => {
                   > */}
                   {navConst.navLinks.map((sl, i) => {
                     return (
-                      <Nav.Link
+                      <Scroll.Link
                         key={i}
-                        className={activeSection === i ? "active" : ""}
+                        className="nav-link"
+                        activeClass="active"
+                        to={sl.key}
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
                       >
                         {sl.name}
-                      </Nav.Link>
+                      </Scroll.Link>
                     );
                   })}
                   {/* </Scrollspy> */}
