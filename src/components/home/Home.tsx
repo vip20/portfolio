@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React, { useRef } from "react";
+import FadeIn from "react-fade-in";
 import { APP_CONST } from "../../core/constants";
 import useResponsive from "../../hooks/useResponsive";
 import { useScrollSpy } from "../../hooks/useScrollspy";
@@ -43,7 +44,7 @@ export const Home = () => {
         isSticky={isSticky}
         activeSection={activeSection}
       ></CustNavbar>
-      <div ref={element}>
+      <FadeIn ref={element}>
         <section id="home" className={sectionCntrClass} ref={sectionRefs[0]}>
           <Profile appConst={homeConst}></Profile>
         </section>
@@ -55,7 +56,7 @@ export const Home = () => {
           className={sectionCntrClass}
           ref={sectionRefs[2]}
         ></section>
-      </div>
+      </FadeIn>
     </div>
   );
 };

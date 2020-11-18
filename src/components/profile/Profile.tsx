@@ -22,7 +22,7 @@ export const Profile = (props: any) => {
       <Container>
         <Row>
           <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }}>
-            <FadeIn className="message-info">
+            <div className="message-info">
               <div className="message-bubble">
                 {profileConst.personalDetails.bubbleMessage}
               </div>
@@ -61,19 +61,17 @@ export const Profile = (props: any) => {
                   );
                 })}
               </ul>
-            </FadeIn>
+            </div>
           </Col>
           <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }}>
-            <FadeIn>
-              <div className="img-border">
-                <Image
-                  className="
+            <div className="img-border">
+              <Image
+                className="
             hero-img"
-                  src={profilePic}
-                  roundedCircle
-                />
-              </div>
-            </FadeIn>
+                src={profilePic}
+                roundedCircle
+              />
+            </div>
           </Col>
         </Row>
       </Container>
