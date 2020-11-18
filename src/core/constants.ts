@@ -1,7 +1,7 @@
 import { AppSetup, CustomNavLink, NavbarSetup, SocialLink } from "./types";
 
 export const defaultNavBar: NavbarSetup = {
-  brand: { name: "Vinay P", path: "/" },
+  brand: { name: "Vinay P", path: "/#home" },
 };
 
 export const defaultSocialLinks: SocialLink[] = [
@@ -30,7 +30,7 @@ export const defaultContactList: SocialLink[] = [
   {
     fa_icon: "phone-alt",
     name: "+91 8892764958",
-    url: "callto:+918892764958",
+    url: "tel:+918892764958",
   },
   {
     fa_icon: "map-marker-alt",
@@ -41,14 +41,17 @@ export const defaultNavLinks: CustomNavLink[] = [
   {
     name: "Home",
     url: "/#home",
+    key: "home",
   },
   {
     name: "About",
     url: "/#about",
+    key: "about",
   },
   {
     name: "Skills",
     url: "/#skills",
+    key: "skills",
   },
 ];
 export const APP_CONST: AppSetup = {

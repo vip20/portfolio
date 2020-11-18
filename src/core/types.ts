@@ -6,6 +6,7 @@ export interface SocialLink {
 export interface CustomNavLink {
   url: string;
   name: string;
+  key: string;
 }
 
 export interface NavbarSetup {

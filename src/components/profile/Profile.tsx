@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import { ProfileSetup } from "../../core/types";
@@ -12,9 +12,9 @@ import classNames from "classnames";
 
 export const Profile = (props: any) => {
   let profileConst: ProfileSetup = props.appConst.profile;
-  const { width, height } = useResponsive();
+  const { width } = useResponsive();
   let profileClass = classNames({
-    "is-mobile": width < 1200,
+    "is-mobile": width < 768,
     "profile-container": true,
   });
   return (

@@ -7,6 +7,15 @@
 }
 .navbar-nav {
   flex: 1 1 auto;
+  .nav-link {
+    margin-right: 1rem;
+  }
+  ul {
+    display: contents;
+    .is-selected {
+      border-bottom: #142d4c 1.5px solid;
+    }
+  }
 }
 .navbar {
   padding: 0px;

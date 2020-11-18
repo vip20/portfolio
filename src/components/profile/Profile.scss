@@ -3,8 +3,6 @@
   margin-right: 5%;
 }
 .profile-container {
-  padding: 180px 0px;
-
   .message-info {
     * {
       padding-left: 0px;
@@ -22,16 +20,6 @@
       border-bottom-right-radius: 20px;
       border-bottom-left-radius: 0px;
       width: fit-content;
-    }
-
-    h2 {
-      font-weight: 600;
-      font-size: 60px;
-    }
-    h4 {
-      font-size: 26px;
-      line-height: 32px;
-      margin-bottom: 24px;
     }
   }
   .list-style {
@@ -89,22 +77,12 @@
   }
 
   &.is-mobile {
-    padding: 60px 0px;
     .order-md-1.order-2 {
       margin-top: 24px;
       text-align: -moz-center;
       text-align: -webkit-center;
     }
     .message-info {
-      h2 {
-        font-weight: 600;
-        font-size: 42px;
-      }
-      h4 {
-        font-size: 20px;
-        line-height: 28px;
-        margin-bottom: 16px;
-      }
       .list-style {
         a {
           font-size: 0.85em;

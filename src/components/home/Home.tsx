@@ -1,8 +1,13 @@
-import React from "react";
+import classNames from "classnames";
+import React, { useRef } from "react";
 import { APP_CONST } from "../../core/constants";
+import useResponsive from "../../hooks/useResponsive";
+import { useScrollSpy } from "../../hooks/useScrollspy";
 import useSticky from "../../hooks/useSticky";
+import { About } from "../about/About";
 import { CustNavbar } from "../custnavbar/CustNavbar";
 import { Profile } from "../profile/Profile";
+import "./Home.scss";
 
 export const Home = () => {
   const { isSticky, element } = useSticky();
@@ -21,15 +26,35 @@ export const Home = () => {
   //     }
   //   );
   // });
+  const sectionRefs = [useRef(null), useRef(null), useRef(null)];
+
+  const activeSection = useScrollSpy({
+    sectionElementRefs: sectionRefs,
+  });
+  const { width } = useResponsive();
+  let sectionCntrClass = classNames({
+    "is-mobile": width < 768,
+    "section-container": true,
+  });
   return (
     <div className=" full-height">
-      <CustNavbar appConst={homeConst} isSticky={isSticky}></CustNavbar>
+      <CustNavbar
+        appConst={homeConst}
+        isSticky={isSticky}
+        activeSection={activeSection}
+      ></CustNavbar>
       <div ref={element}>
-        <section id="home">
+        <section id="home" className={sectionCntrClass} ref={sectionRefs[0]}>
           <Profile appConst={homeConst}></Profile>
         </section>
-        <section id="about"></section>
-        <section id="skills"></section>
+        <section id="about" className={sectionCntrClass} ref={sectionRefs[1]}>
+          <About appConst={homeConst}></About>
+        </section>
+        <section
+          id="skills"
+          className={sectionCntrClass}
+          ref={sectionRefs[2]}
+        ></section>
       </div>
     </div>
   );

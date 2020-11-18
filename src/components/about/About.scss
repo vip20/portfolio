@@ -1,0 +1,18 @@
+.about-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+
+  .img-border {
+    height: 340px;
+    width: 340px;
+  }
+
+  &.is-mobile {
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    .img-border {
+      width: 100%;
+    }
+  }
+}
