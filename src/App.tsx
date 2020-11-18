@@ -10,6 +10,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import {
+  faDownload,
   faEnvelope,
   faMapMarkerAlt,
   faPhoneAlt,
@@ -23,7 +24,8 @@ library.add(
   faLinkedin,
   faEnvelope,
   faMapMarkerAlt,
-  faPhoneAlt
+  faPhoneAlt,
+  faDownload
 );
 function App() {
   return (

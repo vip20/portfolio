@@ -1,3 +1,4 @@
+@import "./theme.scss";
 html,
 body {
   height: 100%;
@@ -23,6 +24,10 @@ body {
   padding-bottom: 0px;
 }
 
+.p-l-4 {
+  padding-left: 4px;
+}
+
 .m-0 {
   margin: 0px;
 }
@@ -44,4 +49,19 @@ body {
 
 .nav {
   height: 68px;
+}
+
+.btn-secondary {
+  color: $pastel1;
+  border-color: $pastel3;
+  background-color: $pastel3;
+  &:hover,
+  &:focus {
+    color: $pastel1;
+    border-color: $pastel3;
+    background-color: $pastel3;
+  }
+  &:not(:disabled):not(.disabled):active {
+    background-color: $pastel1;
+  }
 }
