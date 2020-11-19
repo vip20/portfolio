@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes, useState } from "react";
+import React, { useState } from "react";
 import { Button, Container, Spinner } from "react-bootstrap";
 import "./About.scss";
 import aboutMePic from "../../assets/about_me.svg";
@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AboutSetup, DownloadFile } from "../../core/types";
 import { storageRef } from "../../firebase";
 import { from } from "rxjs/internal/observable/from";
-import { switchMap, tap } from "rxjs/operators";
+import { switchMap } from "rxjs/operators";
 import { of } from "rxjs";
 export const About = ({ appConst }: any) => {
   const aboutConst: AboutSetup = appConst.about;
@@ -33,7 +33,7 @@ export const About = ({ appConst }: any) => {
             xhr.send();
 
             xhr.onload = function (e) {
-              if (this.status == 200) {
+              if (this.status === 200) {
                 setDownloadStatus("Preparing...");
                 // Create a new Blob object using the response data of the onload object
                 var blob = new Blob([this.response], {
