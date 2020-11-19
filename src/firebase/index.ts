@@ -12,4 +12,4 @@ const firebaseConfig = {
   measurementId: "G-LHMEK7TRST",
 };
 firebase.initializeApp(firebaseConfig);
-export const storage = firebase.storage().ref();
+export const storageRef = firebase.storage().ref();

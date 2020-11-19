@@ -25,9 +25,22 @@ export interface ProfileSetup {
   personalDetails: PersonalDetails;
 }
 
+export interface DownloadFile {
+  link: string;
+  mimeType: string;
+  fileName: string;
+}
+
+export interface AboutSetup {
+  title: string;
+  message: string;
+  cvDownload: DownloadFile;
+}
+
 export interface PageSetup {
   profile: ProfileSetup;
   nav: NavbarSetup;
+  about: AboutSetup;
 }
 
 export interface AppSetup {

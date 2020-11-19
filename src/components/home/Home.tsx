@@ -11,21 +11,8 @@ import "./Home.scss";
 
 export const Home = () => {
   const { isSticky, element } = useSticky();
-  // const [imageUrl, setImageUrl] = useState("");
+
   const homeConst = APP_CONST.home;
-  // useEffect(() => {
-  // getFilefromFirebase("photos/vinay_1.jpg")
-  //   .pipe(switchMap((x) => of(x)))
-  //   .subscribe(
-  //     (x) => {
-  //       setImageUrl(x);
-  //     },
-  //     (e) => {
-  //       console.error(e);
-  //       setImageUrl("");
-  //     }
-  //   );
-  // });
 
   const { width } = useResponsive();
   let sectionCntrClass = classNames({
@@ -49,7 +36,3 @@ export const Home = () => {
     </div>
   );
 };
-
-// const getFilefromFirebase = (fileName: string) => {
-//   return from(storage.child(`${fileName}`).getDownloadURL());
-// };

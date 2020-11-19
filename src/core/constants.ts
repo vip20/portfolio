@@ -70,5 +70,16 @@ export const APP_CONST: AppSetup = {
       ...defaultNavBar,
       navLinks: defaultNavLinks,
     },
+    about: {
+      title: "About Me",
+      message: ` Hello, I’m a Vinay, a web-developer based on India. I have rich
+      experience in building website and customization along with Devops
+      configuration using Jenkins.`,
+      cvDownload: {
+        link: "resume/resume.pdf",
+        mimeType: "application/pdf",
+        fileName: "Vinay_resume.pdf",
+      },
+    },
   },
 };
