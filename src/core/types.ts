@@ -35,6 +35,7 @@ export interface AboutSetup {
   title: string;
   message: string;
   cvDownload: DownloadFile;
+  moreSkills: string[];
 }
 
 export interface PageSetup {

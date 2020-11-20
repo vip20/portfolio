@@ -67,43 +67,50 @@ export const About = ({ appConst }: any) => {
   };
 
   return (
-    <Container className={aboutCntrClass}>
-      <div>
-        <img src={aboutMePic} alt="About Me" className="img-border" />
-      </div>
-      <div className="message-info">
-        <h3>
-          <b>{aboutConst.title}</b>
-        </h3>
-        <p>{aboutConst.message}</p>
-
-        <Button
-          type="button"
-          variant="secondary"
-          onClick={() => downloadFile(aboutConst.cvDownload)}
-        >
-          {downloadStatus !== "" ? (
-            <>
-              <Spinner
-                as="span"
-                animation="grow"
-                size="sm"
-                role="status"
-                aria-hidden="true"
-                className="p-r-4"
-              />
-              {downloadStatus}
-            </>
-          ) : (
-            <>
-              Download CV
-              <FontAwesomeIcon
-                className="p-l-4"
-                icon="download"
-              ></FontAwesomeIcon>
-            </>
-          )}
-        </Button>
+    <Container>
+      <div className={aboutCntrClass}>
+        <div>
+          <img src={aboutMePic} alt="About Me" className="img-border" />
+        </div>
+        <div className="message-info">
+          <h3>
+            <b>{aboutConst.title}</b>
+          </h3>
+          <p>{aboutConst.message}</p>
+          <ul className="pill">
+            {aboutConst.moreSkills.map((x) => (
+              <li>{x}</li>
+            ))}
+          </ul>
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={() => downloadFile(aboutConst.cvDownload)}
+          >
+            {downloadStatus !== "" ? (
+              <>
+                <Spinner
+                  as="span"
+                  animation="grow"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                  className="p-r-4"
+                />
+                {downloadStatus}
+              </>
+            ) : (
+              <>
+                Download CV
+                <FontAwesomeIcon
+                  className="p-l-4"
+                  icon="download"
+                ></FontAwesomeIcon>
+              </>
+            )}
+          </Button>
+        </div>
+        <div className="i-do"></div>
       </div>
     </Container>
   );

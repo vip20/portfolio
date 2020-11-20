@@ -73,8 +73,14 @@ export const APP_CONST: AppSetup = {
     about: {
       title: "About Me",
       message: ` Hello, I’m a Vinay, a web-developer based on India. I have rich
-      experience in building website and customization along with Devops
-      configuration using Jenkins.`,
+      experience in building website and customization. Being good at the following`,
+      moreSkills: [
+        "Angular 8 with ngrx",
+        "Jenkins",
+        "Node Js",
+        "React",
+        "Flutter",
+      ],
       cvDownload: {
         link: "resume/resume.pdf",
         mimeType: "application/pdf",
