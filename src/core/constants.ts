@@ -86,6 +86,19 @@ export const APP_CONST: AppSetup = {
         mimeType: "application/pdf",
         fileName: "Vinay_resume.pdf",
       },
+      ido: {
+        title: "What I do",
+        tasks: [
+          {
+            title: "Web Development",
+            message: "",
+          },
+          {
+            title: "App Development",
+            message: "",
+          },
+        ],
+      },
     },
   },
 };

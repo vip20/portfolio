@@ -31,11 +31,23 @@ export interface DownloadFile {
   fileName: string;
 }
 
+export interface IdoTaskSetup {
+  title: string;
+  icon?: string;
+  message: string;
+}
+
+export interface IdoSetup {
+  title: string;
+  tasks: IdoTaskSetup[];
+}
+
 export interface AboutSetup {
   title: string;
   message: string;
   cvDownload: DownloadFile;
   moreSkills: string[];
+  ido?: IdoSetup;
 }
 
 export interface PageSetup {

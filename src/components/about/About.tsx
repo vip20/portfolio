@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Container, Spinner } from "react-bootstrap";
+import { Button, Card, Container, Spinner } from "react-bootstrap";
 import "./About.scss";
 import aboutMePic from "../../assets/about_me.svg";
 import useResponsive from "../../hooks/useResponsive";
@@ -110,8 +110,30 @@ export const About = ({ appConst }: any) => {
             )}
           </Button>
         </div>
-        <div className="i-do"></div>
       </div>
+      {aboutConst.ido && (
+        <div className="i-do">
+          <div className="message-info">
+            <h3 className="text-center">
+              <b>{aboutConst.ido.title}</b>
+            </h3>
+            {aboutConst.ido.tasks.map((x) => (
+              <Card
+                style={{ width: "18rem" }}
+                className="shadow p-3 mb-5 bg-white rounded border-0"
+              >
+                <Card.Body>
+                  <Card.Title className="text-center">{x.title}</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            ))}
+          </div>
+        </div>
+      )}
     </Container>
   );
 };
