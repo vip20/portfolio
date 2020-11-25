@@ -10,9 +10,11 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import {
+  faCode,
   faDownload,
   faEnvelope,
   faMapMarkerAlt,
+  faMobileAlt,
   faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { ResponsiveProvider } from "./hooks/useResponsive";
@@ -25,7 +27,9 @@ library.add(
   faEnvelope,
   faMapMarkerAlt,
   faPhoneAlt,
-  faDownload
+  faDownload,
+  faMobileAlt,
+  faCode
 );
 function App() {
   return (

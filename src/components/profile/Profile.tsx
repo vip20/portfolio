@@ -8,12 +8,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 import useResponsive from "../../hooks/useResponsive";
 import classNames from "classnames";
+import { BREAKPOINT_MOBILE } from "../../core/constants";
 
 export const Profile = (props: any) => {
   let profileConst: ProfileSetup = props.appConst.profile;
   const { width } = useResponsive();
   let profileClass = classNames({
-    "is-mobile": width < 768,
+    "is-mobile": width < BREAKPOINT_MOBILE,
     "profile-container": true,
   });
   return (

@@ -1,5 +1,7 @@
 import { AppSetup, CustomNavLink, NavbarSetup, SocialLink } from "./types";
 
+export const BREAKPOINT_MOBILE = 768;
+
 export const defaultNavBar: NavbarSetup = {
   brand: { name: "Vinay P", path: "/#home" },
 };
@@ -91,14 +93,30 @@ export const APP_CONST: AppSetup = {
         tasks: [
           {
             title: "Web Development",
-            message: "",
+            message: `Some quick example text to build on the card title and
+            make up the bulk of the card's content.`,
           },
           {
             title: "App Development",
-            message: "",
+            message: `Some quick example text to build on the card title and
+            make up the bulk of the card's content.`,
           },
         ],
       },
+    },
+    skills: {
+      technicalSkills: [
+        {
+          name: "Angular 8, Ngrx, Javascript, Nodejs",
+          gpa: 8.5,
+        },
+      ],
+      professionalSkills: [
+        {
+          name: "Communication",
+          gpa: 8.0,
+        },
+      ],
     },
   },
 };

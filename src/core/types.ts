@@ -33,7 +33,6 @@ export interface DownloadFile {
 
 export interface IdoTaskSetup {
   title: string;
-  icon?: string;
   message: string;
 }
 
@@ -50,10 +49,20 @@ export interface AboutSetup {
   ido?: IdoSetup;
 }
 
+export interface Skill {
+  name: string;
+  gpa: number;
+}
+
+export interface SkillSetup {
+  technicalSkills: Skill[];
+  professionalSkills: Skill[];
+}
 export interface PageSetup {
   profile: ProfileSetup;
   nav: NavbarSetup;
   about: AboutSetup;
+  skills: SkillSetup;
 }
 
 export interface AppSetup {

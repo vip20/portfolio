@@ -10,12 +10,20 @@ import { storageRef } from "../../firebase";
 import { from } from "rxjs/internal/observable/from";
 import { switchMap } from "rxjs/operators";
 import { of } from "rxjs";
+import { BREAKPOINT_MOBILE } from "../../core/constants";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 export const About = ({ appConst }: any) => {
   const aboutConst: AboutSetup = appConst.about;
   const { width } = useResponsive();
   let aboutCntrClass = classNames({
-    "is-mobile": width < 768,
+    "is-mobile": width < BREAKPOINT_MOBILE,
     "about-container": true,
+  });
+  let iDoListClass = classNames({
+    "d-flex": true,
+    "flex-row": width >= BREAKPOINT_MOBILE,
+    "flex-column": width < BREAKPOINT_MOBILE,
+    "justify-content-center": true,
   });
   const [downloadStatus, setDownloadStatus] = useState("");
 
@@ -78,8 +86,8 @@ export const About = ({ appConst }: any) => {
           </h3>
           <p>{aboutConst.message}</p>
           <ul className="pill">
-            {aboutConst.moreSkills.map((x) => (
-              <li>{x}</li>
+            {aboutConst.moreSkills.map((x, i) => (
+              <li key={i}>{x}</li>
             ))}
           </ul>
           <Button
@@ -95,7 +103,7 @@ export const About = ({ appConst }: any) => {
                   size="sm"
                   role="status"
                   aria-hidden="true"
-                  className="p-r-4"
+                  className="pr-1"
                 />
                 {downloadStatus}
               </>
@@ -103,7 +111,7 @@ export const About = ({ appConst }: any) => {
               <>
                 Download CV
                 <FontAwesomeIcon
-                  className="p-l-4"
+                  className="pl-1"
                   icon="download"
                 ></FontAwesomeIcon>
               </>
@@ -113,24 +121,30 @@ export const About = ({ appConst }: any) => {
       </div>
       {aboutConst.ido && (
         <div className="i-do">
-          <div className="message-info">
+          <div className="message-info mt-4">
             <h3 className="text-center">
               <b>{aboutConst.ido.title}</b>
             </h3>
-            {aboutConst.ido.tasks.map((x) => (
-              <Card
-                style={{ width: "18rem" }}
-                className="shadow p-3 mb-5 bg-white rounded border-0"
-              >
-                <Card.Body>
-                  <Card.Title className="text-center">{x.title}</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            ))}
+            <div className={iDoListClass}>
+              {aboutConst.ido.tasks.map((x, i) => (
+                <Card
+                  key={i}
+                  style={{ width: "20rem" }}
+                  className="shadow p-3 m-4 bg-white rounded border-0 "
+                >
+                  <Card.Body>
+                    <div className="text-sm-center text-md-left">
+                      <div className="card-title h5">
+                        <div>
+                          <b>{x.title}</b>
+                        </div>
+                      </div>
+                    </div>
+                    <Card.Text>{x.message}</Card.Text>
+                  </Card.Body>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       )}
