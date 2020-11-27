@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Home } from "./components/home/Home";
 import "./App.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -17,7 +16,9 @@ import {
   faMobileAlt,
   faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { ResponsiveProvider } from "./hooks/useResponsive";
+import useResponsive, { ResponsiveProvider } from "./hooks/useResponsive";
+import Landing from "./components/landing";
+import { BREAKPOINT_MOBILE } from "./core/constants";
 
 library.add(
   fab,
@@ -32,14 +33,17 @@ library.add(
   faCode
 );
 function App() {
+  const { width } = useResponsive();
   return (
     <React.Fragment>
       <ResponsiveProvider>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Home}></Route>
-          </Switch>
-        </Router>
+        <div className={width < BREAKPOINT_MOBILE ? "app sm" : "app lg"}>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Landing}></Route>
+            </Switch>
+          </Router>
+        </div>
       </ResponsiveProvider>
     </React.Fragment>
   );

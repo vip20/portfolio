@@ -4,67 +4,93 @@ body {
   height: 100%;
 }
 
-.full-height {
-  height: 100%;
-}
-
-.heading {
-  font-size: 28px !important;
-}
-
-.p-24 {
-  padding: 24px;
-}
-
-.p-12 {
-  padding: 12px;
-}
-
-.p-b-0 {
-  padding-bottom: 0px;
-}
-
-.p-l-4 {
-  padding-left: 4px;
-}
-.p-r-4 {
-  padding-right: 4px;
-}
-
-.m-0 {
-  margin: 0px;
-}
-
-.m-24 {
-  margin: 24px;
-}
-
-.m-r-4 {
-  margin-right: 4px;
-}
-
-.m-r-8 {
-  margin-right: 8px;
-}
-.m-b-16 {
-  margin-bottom: 16px;
-}
-
-.nav {
-  height: 68px;
-}
-
-.btn-secondary {
-  color: $pastel1;
-  border-color: $pastel3;
-  background-color: $pastel3;
-  &:hover,
-  &:focus {
-    color: $pastel1;
-    border-color: $pastel3;
-    background-color: $pastel3;
+div.app {
+  .bg-dark {
+    background-color: $pastel1 !important;
   }
-  &:not(:disabled):not(.disabled):active {
-    background-color: $pastel1;
+  .nav-container {
+    display: grid;
+    grid-template-columns: 66% auto;
+    nav {
+      padding: 1em 1em 1em 10em;
+    }
+    .social-links {
+      padding: 1em 10em 1em 1em;
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        li {
+          a {
+            color: $pastel1;
+            font-size: 26px;
+          }
+        }
+      }
+    }
+  }
+
+  &.sm {
   }
 }
+
+// .full-height {
+//   height: 100%;
+// }
+
+// .heading {
+//   font-size: 28px !important;
+// }
+
+// .p-24 {
+//   padding: 24px;
+// }
+
+// .p-12 {
+//   padding: 12px;
+// }
+
+// .p-b-0 {
+//   padding-bottom: 0px;
+// }
+
+// .p-l-4 {
+//   padding-left: 4px;
+// }
+// .p-r-4 {
+//   padding-right: 4px;
+// }
+
+// .m-0 {
+//   margin: 0px;
+// }
+
+// .m-24 {
+//   margin: 24px;
+// }
+
+// .m-r-4 {
+//   margin-right: 4px;
+// }
+
+// .m-r-8 {
+//   margin-right: 8px;
+// }
+// .m-b-16 {
+//   margin-bottom: 16px;
+// }
+
+// .btn-secondary {
+//   color: $pastel1;
+//   border-color: $pastel3;
+//   background-color: $pastel3;
+//   &:hover,
+//   &:focus {
+//     color: $pastel1;
+//     border-color: $pastel3;
+//     background-color: $pastel3;
+//   }
+//   &:not(:disabled):not(.disabled):active {
+//     background-color: $pastel1;
+//   }
+// }
