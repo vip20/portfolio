@@ -29,6 +29,22 @@ div.app {
       }
     }
   }
+  .home-container {
+    display: grid;
+    grid-template-columns: 66% auto;
+    .info {
+      background-color: $pastel2;
+      height: 90vh;
+    }
+    .hero-container {
+      .hero-img {
+        margin-top: calc(45vh - 39%);
+        margin-left: -42%;
+        width: 75%;
+        border: 10px solid white;
+      }
+    }
+  }
 
   &.sm {
   }
