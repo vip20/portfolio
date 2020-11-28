@@ -96,7 +96,11 @@ div#app {
         }
       }
       .info {
-        padding: 20% 1.5em;
+        padding: 30% 1.5em;
+        text-align: center;
+        button {
+          margin: 0 auto;
+        }
       }
       .hero-container {
         display: none !important;
