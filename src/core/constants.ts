@@ -40,11 +40,11 @@ export const defaultContactList: SocialLink[] = [
   },
 ];
 export const defaultNavLinks: CustomNavLink[] = [
-  {
-    name: "Home",
-    url: "/#home",
-    key: "home",
-  },
+  // {
+  //   name: "Home",
+  //   url: "/#home",
+  //   key: "home",
+  // },
   {
     name: "About",
     url: "/#about",
@@ -61,7 +61,7 @@ export const APP_CONST: AppSetup = {
     profile: {
       personalDetails: {
         name: "Vinay P",
-        role: "Create and Build Responsive Websites",
+        role: "Builds User-Interfaces & Codes Design Elements",
         bubbleMessage: `👇 Meet `,
       },
       profilePic: "photos/vinay_1.jpg",
@@ -74,8 +74,7 @@ export const APP_CONST: AppSetup = {
     },
     about: {
       title: "About Me",
-      message: ` Hello, I’m a Vinay, a web-developer based on India. I have rich
-      experience in building website and customization. Being good at the following`,
+      message: `My name is Vinay. I'm a Front-end Developer based in India, who focuses on writing clean, elegant and efficient code`,
       moreSkills: [
         "Angular 8 with ngrx",
         "Jenkins",
