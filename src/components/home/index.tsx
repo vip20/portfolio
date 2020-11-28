@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { storageRef } from "../../firebase";
 import { from, of } from "rxjs";
 import { switchMap } from "rxjs/operators";
+import { IconName } from "@fortawesome/fontawesome-svg-core";
 
 export default function Home({ appConst }: { appConst: PageSetup }) {
   const profileConst = appConst.profile;
@@ -100,6 +101,22 @@ export default function Home({ appConst }: { appConst: PageSetup }) {
             </>
           )}
         </Button>
+        <div className="social-links">
+          <ul className="d-flex justify-content-around flex-column align-items-end mt-1">
+            {profileConst.socialLinks?.map((sl, i) => {
+              return (
+                <li key={i + "sl"}>
+                  <a href={sl.url} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon
+                      icon={["fab", sl.fa_icon as IconName]}
+                      className="heading m-r-8 icon"
+                    />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
         <ScrollDown></ScrollDown>
       </div>
       <div className="hero-container">

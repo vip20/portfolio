@@ -12,7 +12,7 @@ div#app {
     display: grid;
     grid-template-columns: 66% auto;
     nav {
-      padding: 2em 2em 2em 20em;
+      padding: 2em 2em 2em 22%;
     }
     .navbar-dark .navbar-toggler {
       border: none !important;
@@ -22,7 +22,7 @@ div#app {
       }
     }
     .social-links {
-      padding: 2em 20em 2em 2em;
+      padding: 2em 22% 2em 2em;
       ul {
         padding: 0;
         margin: 0;
@@ -40,13 +40,16 @@ div#app {
     display: grid;
     grid-template-columns: 66% auto;
 
+    .social-links {
+      display: none;
+    }
     .btn {
       border-radius: 20px;
     }
     .info {
       background-color: $pastel2;
       height: 88vh;
-      padding: 9em 20em 6em 20em;
+      padding: 9em 20em 6em 22%;
     }
     .hero-container {
       .hero-img {
@@ -73,8 +76,24 @@ div#app {
     .home-container {
       display: grid;
       grid-template-columns: 100%;
+
+      .social-links {
+        display: inline;
+        ul {
+          height: 200px;
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+          li {
+            a {
+              color: $pastel5;
+              font-size: 24px;
+            }
+          }
+        }
+      }
       .info {
-        padding: 9em 1.5em 6em 1.5em;
+        padding: 20% 1.5em;
       }
       .hero-container {
         display: none !important;

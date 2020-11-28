@@ -1,6 +1,6 @@
 import { AppSetup, CustomNavLink, NavbarSetup, SocialLink } from "./types";
 
-export const BREAKPOINT_MOBILE = 768;
+export const BREAKPOINT_MOBILE = 992;
 
 export const defaultNavBar: NavbarSetup = {
   brand: { name: "Vinay P", path: "/#home" },
