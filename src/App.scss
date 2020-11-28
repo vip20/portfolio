@@ -38,10 +38,10 @@ div.app {
     }
     .hero-container {
       .hero-img {
-        margin-top: calc(45vh - 39%);
-        margin-left: -42%;
-        width: 75%;
-        border: 10px solid white;
+        display: unset;
+        margin-left: -50%;
+        margin-top: 15%;
+        width: 100%;
       }
     }
   }

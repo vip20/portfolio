@@ -32,7 +32,7 @@ export const Home = () => {
             <About appConst={homeConst}></About>
           </section>
           <section id="skills" className={sectionCntrClass}>
-            {/* <Skills appConst={homeConst}></Skills> */}
+            <Skills appConst={homeConst}></Skills>
           </section>
         </FadeIn>
       </div>

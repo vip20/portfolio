@@ -11,7 +11,7 @@ import { from } from "rxjs/internal/observable/from";
 import { switchMap } from "rxjs/operators";
 import { of } from "rxjs";
 import { BREAKPOINT_MOBILE } from "../../core/constants";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
+// import { IconProp } from "@fortawesome/fontawesome-svg-core";
 export const About = ({ appConst }: any) => {
   const aboutConst: AboutSetup = appConst.about;
   const { width } = useResponsive();
