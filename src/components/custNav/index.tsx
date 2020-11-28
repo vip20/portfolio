@@ -16,12 +16,18 @@ function CustNav({ appConst }: { appConst: PageSetup }) {
       >
         {navConst.brand && (
           <Navbar.Brand href={navConst.brand.path}>
-            <b>{navConst.brand.name}</b>
+            <b className="pastel-4">{navConst.brand.name}</b>
           </Navbar.Brand>
         )}
         {navConst.navLinks && (
           <>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Toggle aria-controls="basic-navbar-nav">
+              <svg viewBox="0 0 100 80" width="30" height="30">
+                <rect width="100" height="5"></rect>
+                <rect x="50" y="30" width="50" height="5"></rect>
+                <rect y="60" width="100" height="5"></rect>
+              </svg>
+            </Navbar.Toggle>
             <Navbar.Collapse
               id="basic-navbar-nav"
               className="justify-content-end"

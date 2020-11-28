@@ -61,8 +61,8 @@ export const APP_CONST: AppSetup = {
     profile: {
       personalDetails: {
         name: "Vinay P",
-        role: "Frontend Developer",
-        bubbleMessage: "Hello I'm",
+        role: "Create and Build Responsive Websites",
+        bubbleMessage: `👇 Meet `,
       },
       profilePic: "photos/vinay_1.jpg",
       contactLinks: defaultContactList,

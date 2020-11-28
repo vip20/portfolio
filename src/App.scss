@@ -4,7 +4,7 @@ body {
   height: 100%;
 }
 
-div.app {
+div#app {
   .bg-dark {
     background-color: $pastel1 !important;
   }
@@ -12,10 +12,17 @@ div.app {
     display: grid;
     grid-template-columns: 66% auto;
     nav {
-      padding: 1em 1em 1em 10em;
+      padding: 2em 2em 2em 20em;
+    }
+    .navbar-dark .navbar-toggler {
+      border: none !important;
+      outline: none !important;
+      svg {
+        fill: $pastel5;
+      }
     }
     .social-links {
-      padding: 1em 10em 1em 1em;
+      padding: 2em 20em 2em 2em;
       ul {
         padding: 0;
         margin: 0;
@@ -32,9 +39,14 @@ div.app {
   .home-container {
     display: grid;
     grid-template-columns: 66% auto;
+
+    .btn {
+      border-radius: 20px;
+    }
     .info {
       background-color: $pastel2;
-      height: 90vh;
+      height: 88vh;
+      padding: 9em 20em 6em 20em;
     }
     .hero-container {
       .hero-img {
@@ -47,66 +59,41 @@ div.app {
   }
 
   &.sm {
+    .nav-container {
+      display: grid;
+      grid-template-columns: 100%;
+      nav {
+        padding: 1.5em !important;
+      }
+      .social-links {
+        display: none;
+      }
+    }
+
+    .home-container {
+      display: grid;
+      grid-template-columns: 100%;
+      .info {
+        padding: 9em 1.5em 6em 1.5em;
+      }
+      .hero-container {
+        display: none !important;
+      }
+    }
   }
 }
 
-// .full-height {
-//   height: 100%;
-// }
-
-// .heading {
-//   font-size: 28px !important;
-// }
-
-// .p-24 {
-//   padding: 24px;
-// }
-
-// .p-12 {
-//   padding: 12px;
-// }
-
-// .p-b-0 {
-//   padding-bottom: 0px;
-// }
-
-// .p-l-4 {
-//   padding-left: 4px;
-// }
-// .p-r-4 {
-//   padding-right: 4px;
-// }
-
-// .m-0 {
-//   margin: 0px;
-// }
-
-// .m-24 {
-//   margin: 24px;
-// }
-
-// .m-r-4 {
-//   margin-right: 4px;
-// }
-
-// .m-r-8 {
-//   margin-right: 8px;
-// }
-// .m-b-16 {
-//   margin-bottom: 16px;
-// }
-
-// .btn-secondary {
-//   color: $pastel1;
-//   border-color: $pastel3;
-//   background-color: $pastel3;
-//   &:hover,
-//   &:focus {
-//     color: $pastel1;
-//     border-color: $pastel3;
-//     background-color: $pastel3;
-//   }
-//   &:not(:disabled):not(.disabled):active {
-//     background-color: $pastel1;
-//   }
-// }
+.btn-secondary {
+  color: $pastel2;
+  border-color: $pastel3;
+  background-color: $pastel3;
+  &:hover,
+  &:focus {
+    color: $pastel1;
+    border-color: $pastel3;
+    background-color: $pastel3;
+  }
+  &:not(:disabled):not(.disabled):active {
+    background-color: $pastel1;
+  }
+}
