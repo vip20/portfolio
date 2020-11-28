@@ -79,6 +79,9 @@ div#app {
 
       .social-links {
         display: inline;
+        position: absolute;
+        bottom: 2em;
+        right: 2em;
         ul {
           height: 200px;
           padding: 0;
