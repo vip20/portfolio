@@ -1,4 +1,10 @@
-import { AppSetup, CustomNavLink, NavbarSetup, SocialLink } from "./types";
+import {
+  AppSetup,
+  CustomNavLink,
+  DownloadFile,
+  NavbarSetup,
+  SocialLink,
+} from "./types";
 
 export const BREAKPOINT_MOBILE = 992;
 
@@ -118,4 +124,85 @@ export const APP_CONST: AppSetup = {
       ],
     },
   },
+};
+
+export interface HomeData {
+  intro: string;
+  skills: string[];
+  skillsInterval: number;
+}
+export interface NavItem {
+  displayName: string;
+  url: string;
+}
+export interface AboutData {
+  title: string;
+  subTitle: string;
+  body: string;
+  startDate: Date;
+  currentEmployer: string;
+  cvDownload: DownloadFile;
+}
+export interface AppData {
+  navItems: NavItem[];
+  home: HomeData;
+  about: AboutData;
+  socialLinks: SocialLink[];
+  contactLinks: SocialLink[];
+}
+
+export const APP_DATA_CONST: AppData = {
+  navItems: [
+    {
+      url: "#home",
+      displayName: "Home",
+    },
+    {
+      url: "#about",
+      displayName: "About",
+    },
+    {
+      url: "#skills",
+      displayName: "Skills",
+    },
+    // {
+    //   url: "#portfolio",
+    //   displayName: "Portfolio",
+    // },
+    // {
+    //   url: "#services",
+    //   displayName: "Services",
+    // },
+    // {
+    //   url: "#testimonial",
+    //   displayName: "Testimonial",
+    // },
+    {
+      url: "#blog",
+      displayName: "Blog",
+    },
+    {
+      url: "#contact",
+      displayName: "Contact",
+    },
+  ],
+  home: {
+    intro: "Hi, I am Vinay P",
+    skills: ["Front-End Developer", "Flutter Developer"],
+    skillsInterval: 2000,
+  },
+  about: {
+    title: "Hello, I am Vinay",
+    subTitle: "Web Developer from India",
+    body: `I describe myself as a passionate developer who loves coding, open source, and the web platform. Beside from my job, I like to explore new technology and contribute to open source projects. That helped me a lot to grow as a web developer.`,
+    startDate: new Date("August 24, 2015 00:00:00"),
+    currentEmployer: "Cisco Systems India Pvt Ltd.",
+    cvDownload: {
+      link: "resume/resume.pdf",
+      mimeType: "application/pdf",
+      fileName: "Vinay_resume.pdf",
+    },
+  },
+  socialLinks: defaultSocialLinks,
+  contactLinks: defaultContactList,
 };
