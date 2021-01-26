@@ -129,7 +129,7 @@
         rules: {
           name: {
             required: true,
-            minlength: 2,
+            minlength: 3,
           },
           email: {
             required: true,
@@ -140,21 +140,23 @@
         },
         messages: {
           name: {
-            required: "Please Input Your Name",
-            minlength: "your name must consist of at least 2 characters",
+            required: "Please enter your name.",
+            minlength: "Name must be of 3 characters at least.",
           },
           email: {
-            required: "Please Input Your Email",
+            required:
+              "Please input a valid email address, so that I can reach you back",
           },
           message: {
-            required: "Your Message Required",
+            required: "Please enter a message for me.",
           },
         },
         submitHandler: function (form) {
           $(form).ajaxSubmit({
             type: "POST",
             data: $(form).serialize(),
-            url: "php/process.php",
+            url:
+              "https://us-central1-vinay-portfolio-28eab.cloudfunctions.net/contactMe",
             success: function () {
               $("#contact :input").attr("disabled", "disabled");
               $("#contact").fadeTo("slow", 1, function () {

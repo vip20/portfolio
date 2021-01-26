@@ -3,6 +3,7 @@ import {
   CustomNavLink,
   DownloadFile,
   NavbarSetup,
+  Skill,
   SocialLink,
 } from "./types";
 
@@ -126,6 +127,22 @@ export const APP_CONST: AppSetup = {
   },
 };
 
+export const defaultTechnicalSkills: Skill[] = [
+  {
+    name: "Angular 8 with ngrx",
+    gpa: 85
+  },{
+    name: "JQuery / Javascript / NodeJs",
+    gpa: 80
+  },{
+    name: "CI/CD - Jenkins",
+    gpa: 80
+  },{
+    name: "Flutter",
+    gpa: 70
+  }
+]
+
 export interface HomeData {
   intro: string;
   skills: string[];
@@ -149,6 +166,7 @@ export interface AppData {
   about: AboutData;
   socialLinks: SocialLink[];
   contactLinks: SocialLink[];
+  technicalSkills: Skill[];
 }
 
 export const APP_DATA_CONST: AppData = {
@@ -205,4 +223,5 @@ export const APP_DATA_CONST: AppData = {
   },
   socialLinks: defaultSocialLinks,
   contactLinks: defaultContactList,
+  technicalSkills: defaultTechnicalSkills
 };

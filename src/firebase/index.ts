@@ -12,4 +12,7 @@ const firebaseConfig = {
   measurementId: "G-LHMEK7TRST",
 };
 firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+const analytics = firebase.analytics();
+analytics.logEvent("landed_to_portfolio");
 export const storageRef = firebase.storage().ref();

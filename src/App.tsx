@@ -25,7 +25,9 @@ import { from, of } from "rxjs";
 import { switchMap } from "rxjs/operators";
 import { DownloadFile } from "./core/types";
 import { diff_years } from "./core/utils";
+import firebase from "firebase";
 
+const analytics = firebase.analytics();
 library.add(
   fab,
   faGithub,
@@ -61,6 +63,7 @@ export function App() {
   const [downloadStatus, setDownloadStatus] = useState("");
 
   const downloadFile = (downloadFile: DownloadFile) => {
+    analytics.logEvent("download_resume");
     if (downloadStatus === "") {
       setDownloadStatus("Applying CSS...");
       getFilefromFirebase(downloadFile.link)
@@ -240,13 +243,13 @@ export function App() {
               </ul>
 
               <p>
-                <a
+                <button
                   onClick={() => downloadFile(appDataConst.about.cvDownload)}
                   className="btn btn-dark with-arrow smoth-scroll"
                 >
                   My Resume
                   <i className="fa fa-download"></i>
-                </a>
+                </button>
               </p>
             </div>
 
@@ -323,69 +326,29 @@ export function App() {
               <h2>My Skills</h2>
             </div>
 
-            <div className="col-md-5 col-sm-6 col-xs-12">
-              <div className="progress-box">
-                <p>
-                  PHP
-                  <span className="color-heading pull-right">87%</span>
-                </p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-color-base"
-                    role="progressbar"
-                    data-width="87"
-                  ></div>
+            {appDataConst.technicalSkills.map((x, i) => {
+              return (
+                <div
+                  className={`col-md-5 col-sm-6 col-xs-12 ${
+                    (i + 1) % 2 === 0 ? "skills-right " : ""
+                  }`}
+                >
+                  <div className="progress-box">
+                    <p>
+                      {x.name}
+                      <span className="color-heading pull-right">{x.gpa}%</span>
+                    </p>
+                    <div className="progress">
+                      <div
+                        className="progress-bar bg-color-base"
+                        role="progressbar"
+                        data-width={x.gpa}
+                      ></div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="col-md-5 col-sm-6 col-xs-12 skills-right">
-              <div className="progress-box">
-                <p>
-                  HTML5
-                  <span className="color-heading pull-right">96%</span>
-                </p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-color-base"
-                    role="progressbar"
-                    data-width="96"
-                  ></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-5 col-sm-6 col-xs-12">
-              <div className="progress-box">
-                <p>
-                  JavaSript
-                  <span className="color-heading pull-right">52%</span>
-                </p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-color-base"
-                    role="progressbar"
-                    data-width="52"
-                  ></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-5 col-sm-6 col-xs-12 skills-right">
-              <div className="progress-box">
-                <p>
-                  Photoshop
-                  <span className="color-heading pull-right">77%</span>
-                </p>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-color-base"
-                    role="progressbar"
-                    data-width="77"
-                  ></div>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -399,7 +362,7 @@ export function App() {
               <h2>Blog Post</h2>
             </div>
 
-            <div className="col-md-4 col-sm-6">
+            {/* <div className="col-md-4 col-sm-6">
               <div className="blog-item">
                 <a href="single.html" className="blog-img">
                   <img src="assets/img/blog/blog-1.jpg" />
@@ -417,47 +380,9 @@ export function App() {
                   </a>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="col-md-4 col-sm-6">
-              <div className="blog-item">
-                <a href="single.html" className="blog-img">
-                  <img src="assets/img/blog/blog-2.jpg" />
-                </a>
-                <div className="blog-desc">
-                  <h4>
-                    <a href="single.html">Lorem ipsum dolor sit amet</a>
-                  </h4>
-                  <p>
-                    Class aptent taciti sociosqu ad litora torquent per conubia
-                    nostra, per inceptos himenaeos.
-                  </p>
-                  <a href="single.html" className="btn btn-dark">
-                    Read more
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-4 col-sm-6">
-              <div className="blog-item">
-                <a href="single.html" className="blog-img">
-                  <img src="assets/img/blog/blog-3.jpg" />
-                </a>
-                <div className="blog-desc">
-                  <h4>
-                    <a href="single.html">Lorem ipsum dolor sit amet</a>
-                  </h4>
-                  <p>
-                    Class aptent taciti sociosqu ad litora torquent per conubia
-                    nostra, per inceptos himenaeos.
-                  </p>
-                  <a href="single.html" className="btn btn-dark">
-                    Read more
-                  </a>
-                </div>
-              </div>
-            </div>
+            <h3>Coming Soon...</h3>
           </div>
         </div>
       </section>
@@ -476,7 +401,14 @@ export function App() {
               {appDataConst.contactLinks?.map((cl, i) => {
                 return (
                   <div className="col-md-4 col-sm-4" key={i + "cl"}>
-                    <a href={cl.url} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={cl.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() =>
+                        analytics.logEvent(`clicked_${cl.fa_icon}`)
+                      }
+                    >
                       <FontAwesomeIcon icon={["fas", cl.fa_icon as IconName]} />
                       <p>{cl.name}</p>
                     </a>
@@ -534,6 +466,7 @@ export function App() {
                     type="submit"
                     name="submit"
                     className="btn btn-dark"
+                    onClick={() => analytics.logEvent("send_message")}
                   >
                     Send Message
                   </button>
