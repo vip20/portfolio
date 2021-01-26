@@ -474,12 +474,14 @@ export function App() {
 
                 <div id="success" className="col-md-12 col-xs-12">
                   <p className="green textcenter">
-                    Your message was sent, Thank you.
+                    Thanks for your message. I'll contact you soon.
                   </p>
                 </div>
 
                 <div id="error" className="col-md-12 col-xs-12">
-                  <p>Something maybe wrong please try again</p>
+                  <p>
+                    Something might have gone wrong, please try again later.
+                  </p>
                 </div>
               </form>
             </div>
