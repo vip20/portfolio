@@ -232,6 +232,9 @@ export function App() {
                         href={sl.url}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() =>
+                          analytics.logEvent(`clicked_${sl.fa_icon}`)
+                        }
                       >
                         <FontAwesomeIcon
                           icon={["fab", sl.fa_icon as IconName]}
@@ -498,7 +501,14 @@ export function App() {
               {appDataConst.socialLinks?.map((sl, i) => {
                 return (
                   <li key={i + "sl"}>
-                    <a href={sl.url} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={sl.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() =>
+                        analytics.logEvent(`clicked_${sl.fa_icon}`)
+                      }
+                    >
                       <FontAwesomeIcon icon={["fab", sl.fa_icon as IconName]} />
                     </a>
                   </li>
