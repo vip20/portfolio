@@ -130,21 +130,18 @@ export const APP_CONST: AppSetup = {
 export const defaultTechnicalSkills: Skill[] = [
   {
     name: "Angular 8 with ngrx",
-    gpa: 85,
-  },
-  {
+    gpa: 85
+  },{
     name: "JQuery / Javascript / NodeJs",
-    gpa: 80,
-  },
-  {
+    gpa: 80
+  },{
     name: "CI/CD - Jenkins",
-    gpa: 80,
-  },
-  {
+    gpa: 80
+  },{
     name: "Flutter",
-    gpa: 70,
-  },
-];
+    gpa: 70
+  }
+]
 
 export interface HomeData {
   intro: string;
@@ -226,5 +223,5 @@ export const APP_DATA_CONST: AppData = {
   },
   socialLinks: defaultSocialLinks,
   contactLinks: defaultContactList,
-  technicalSkills: defaultTechnicalSkills,
+  technicalSkills: defaultTechnicalSkills
 };
