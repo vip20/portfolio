@@ -9,7 +9,13 @@
     "activityBarBadge.foreground": "#15202b",
     "statusBar.background": "#7bf4df",
     "statusBar.foreground": "#15202b",
-    "statusBarItem.hoverBackground": "#4cf0d4"
+    "statusBarItem.hoverBackground": "#4cf0d4",
+    "editorGroup.border": "#aaf8ea",
+    "panel.border": "#aaf8ea",
+    "sash.hoverBorder": "#aaf8ea",
+    "sideBar.border": "#aaf8ea",
+    "statusBarItem.remoteBackground": "#7bf4df",
+    "statusBarItem.remoteForeground": "#15202b"
   },
   "peacock.color": "#7bf4df"
 }

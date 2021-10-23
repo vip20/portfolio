@@ -1,5 +1,4 @@
 export function diff_years(dt2: Date, dt1: Date) {
-  var diff = (dt2.getTime() - dt1.getTime()) / 1000;
-  diff /= 60 * 60 * 24;
-  return Math.abs(Math.round(diff / 365.25));
+  var diff = (dt2.getTime() - dt1.getTime()) / 31557600000;
+  return Math.round(diff);
 }

@@ -46,6 +46,8 @@ const getFilefromFirebase = (fileName: string) => {
 };
 
 export function App() {
+  const appDataConst: AppData = APP_DATA_CONST;
+  const yearDiff = diff_years(new Date(), appDataConst.about.startDate);
   useEffect(() => {
     [
       "vendor/assets/js/numscroller.js",
@@ -109,7 +111,6 @@ export function App() {
         );
     }
   };
-  const appDataConst: AppData = APP_DATA_CONST;
   return (
     <>
       {/* <!-- // PRELOADER BEGIN --> */}
@@ -273,11 +274,12 @@ export function App() {
                       className="numscroller"
                       data-slno="1"
                       data-min="0"
-                      data-max="5"
+                      data-max={yearDiff}
                       data-delay="1"
                       data-increment="1"
                     >
-                      {diff_years(new Date(), appDataConst.about.startDate)}
+                      {
+                      yearDiff}
                     </div>
                     <div className="count-name-intro">Years of Experience</div>
                   </div>
