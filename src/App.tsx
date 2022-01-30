@@ -47,7 +47,7 @@ const getFilefromFirebase = (fileName: string) => {
 
 export function App() {
   const appDataConst: AppData = APP_DATA_CONST;
-  const yearDiff = diff_years(new Date(), appDataConst.about.startDate)
+  const yearDiff = diff_years(new Date(), appDataConst.about.startDate);
   useEffect(() => {
     [
       "vendor/assets/js/numscroller.js",
@@ -398,6 +398,17 @@ export function App() {
               <h2>Contact Me</h2>
             </div>
 
+            <div className="row">
+              <div id="success" className="col-md-12 col-xs-12">
+                <p className="green textcenter">
+                  Thanks for your message. I'll contact you soon.
+                </p>
+              </div>
+
+              <div id="error" className="col-md-12 col-xs-12">
+                <p>Something might have gone wrong, please try again later.</p>
+              </div>
+            </div>
             <div className="address-icons col-md-8 col-md-offset-2">
               {appDataConst.contactLinks?.map((cl, i) => {
                 return (
@@ -420,7 +431,12 @@ export function App() {
             </div>
 
             <div className="col-md-8 col-md-offset-2">
-              <form id="contact-form" name="contact" method="post">
+              <form
+                id="contact-form"
+                name="contact"
+                action="https://formsubmit.co/33a47893e24afa3ca56c16a5f6717d3e"
+                method="POST"
+              >
                 <div className="row">
                   <div className="col-md-6 col-sm-6">
                     <div className="form-group">
@@ -449,6 +465,15 @@ export function App() {
                     </div>
                   </div>
                 </div>
+                <input type="text" name="_honey" style={{ display: "none" }} />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value={window.location.origin + "/#contact_success"}
+                />
+
                 <div className="form-group">
                   <textarea
                     name="message"
@@ -471,18 +496,6 @@ export function App() {
                   >
                     Send Message
                   </button>
-                </div>
-
-                <div id="success" className="col-md-12 col-xs-12">
-                  <p className="green textcenter">
-                    Thanks for your message. I'll contact you soon.
-                  </p>
-                </div>
-
-                <div id="error" className="col-md-12 col-xs-12">
-                  <p>
-                    Something might have gone wrong, please try again later.
-                  </p>
                 </div>
               </form>
             </div>

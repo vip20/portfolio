@@ -123,6 +123,26 @@
 
     /* 10. CONTACT VALIDATION FORM
 		==================================================*/
+    let hash = window.location.hash;
+    if (hash && hash === "#contact_success") {
+      $("html, body").animate(
+        {
+          scrollTop: $("#contact").offset().top,
+        },
+        500
+      );
+      $("#contact").fadeTo("slow", 1, function () {
+        let e = $("#success");
+
+        e.fadeIn();
+        e.queue(function () {
+          setTimeout(function () {
+            e.dequeue();
+          }, 2000);
+        });
+        e.fadeOut("slow");
+      });
+    }
 
     $(function () {
       $("#contact-form").validate({
@@ -151,27 +171,27 @@
             required: "Please enter a message for me.",
           },
         },
-        submitHandler: function (form) {
-          $(form).ajaxSubmit({
-            type: "POST",
-            data: $(form).serialize(),
-            url:
-              "https://us-central1-vinay-portfolio-28eab.cloudfunctions.net/contactMe",
-            success: function () {
-              $("#contact :input").attr("disabled", "disabled");
-              $("#contact").fadeTo("slow", 1, function () {
-                $(this).find(":input").attr("disabled", "disabled");
-                $(this).find("label").css("cursor", "default");
-                $("#success").fadeIn();
-              });
-            },
-            error: function () {
-              $("#contact").fadeTo("slow", 1, function () {
-                $("#error").fadeIn();
-              });
-            },
-          });
-        },
+        // submitHandler: function (form) {
+        //   $(form).ajaxSubmit({
+        //     type: "POST",
+        //     data: $(form).serialize(),
+        //     url:
+        //       "https://us-central1-vinay-portfolio-28eab.cloudfunctions.net/contactMe",
+        //     success: function () {
+        //       $("#contact :input").attr("disabled", "disabled");
+        //       $("#contact").fadeTo("slow", 1, function () {
+        //         $(this).find(":input").attr("disabled", "disabled");
+        //         $(this).find("label").css("cursor", "default");
+        //         $("#success").fadeIn();
+        //       });
+        //     },
+        //     error: function () {
+        //       $("#contact").fadeTo("slow", 1, function () {
+        //         $("#error").fadeIn();
+        //       });
+        //     },
+        //   });
+        // },
       });
     });
   });
