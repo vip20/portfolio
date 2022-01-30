@@ -152,8 +152,8 @@ export function App() {
 
                   <div className="navbar-collapse collapse">
                     <ul className="nav navbar-nav navbar-right">
-                      {appDataConst.navItems.map((nav) => (
-                        <li>
+                      {appDataConst.navItems.map((nav, i) => (
+                        <li key={i + "nav"}>
                           <a className="smoth-scroll" href={nav.url}>
                             {nav.displayName}
                           </a>

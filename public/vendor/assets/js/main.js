@@ -23,6 +23,8 @@
     /* XX. PRELOADER
 		==================================================*/
 
+    $(document).scrollzipInit();
+    $(document).rollerInit();
     $(window).on("load", function () {
       $("#status").fadeOut();
       $("#preloader").delay(500).fadeOut("slow");
@@ -138,7 +140,7 @@
         e.queue(function () {
           setTimeout(function () {
             e.dequeue();
-          }, 2000);
+          }, 5000);
         });
         e.fadeOut("slow");
       });
