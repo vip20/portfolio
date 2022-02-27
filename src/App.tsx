@@ -20,12 +20,12 @@ import {
   faMobileAlt,
   faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { storageRef } from "./firebase";
 import { from, of } from "rxjs";
 import { switchMap } from "rxjs/operators";
 import { DownloadFile } from "./core/types";
 import { diff_years } from "./core/utils";
-import firebase from "firebase";
+import firebase from "firebase/app";
+import { storageRef } from "./firebase";
 
 const analytics = firebase.analytics();
 library.add(
@@ -50,9 +50,9 @@ export function App() {
   const yearDiff = diff_years(new Date(), appDataConst.about.startDate);
   useEffect(() => {
     [
-      "vendor/assets/js/numscroller.js",
       "vendor/assets/js/progress-bar.min.js",
       "vendor/assets/js/magnific-popup-options.js",
+      "vendor/assets/js/numscroller.js",
       "vendor/assets/js/main.js",
     ].forEach((src) => {
       let script = document.createElement("script");
@@ -356,37 +356,19 @@ export function App() {
       {/* <!-- // SKILLS END -->
 
       <!-- // BLOG BEGIN -->*/}
-      <section id="blog">
+      {/* <section id="blog">
         <div className="container text-center">
           <div className="row">
             <div className="col-md-12 text-center">
               <h2>Blog Post</h2>
             </div>
 
-            {/* <div className="col-md-4 col-sm-6">
-              <div className="blog-item">
-                <a href="single.html" className="blog-img">
-                  <img src="assets/img/blog/blog-1.jpg" />
-                </a>
-                <div className="blog-desc">
-                  <h4>
-                    <a href="single.html">Lorem ipsum dolor sit amet</a>
-                  </h4>
-                  <p>
-                    Class aptent taciti sociosqu ad litora torquent per conubia
-                    nostra, per inceptos himenaeos.
-                  </p>
-                  <a href="single.html" className="btn btn-dark">
-                    Read more
-                  </a>
-                </div>
-              </div>
-            </div> */}
+            
 
             <h3>Coming Soon...</h3>
           </div>
         </div>
-      </section>
+      </section> */}
       {/*<!-- // BLOG END -->
 
 
@@ -471,7 +453,7 @@ export function App() {
                 <input
                   type="hidden"
                   name="_next"
-                  value={window.location.origin + "/#contact_success"}
+                  value={window.location.origin + "/?messageStatus=success"}
                 />
 
                 <div className="form-group">

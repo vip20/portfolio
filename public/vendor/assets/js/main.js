@@ -22,9 +22,6 @@
   jQuery(document).ready(function () {
     /* XX. PRELOADER
 		==================================================*/
-
-    $(document).scrollzipInit();
-    $(document).rollerInit();
     $(window).on("load", function () {
       $("#status").fadeOut();
       $("#preloader").delay(500).fadeOut("slow");
@@ -125,27 +122,32 @@
 
     /* 10. CONTACT VALIDATION FORM
 		==================================================*/
-    let hash = window.location.hash;
-    if (hash && hash === "#contact_success") {
-      $("html, body").animate(
-        {
-          scrollTop: $("#contact").offset().top,
-        },
-        500
-      );
-      $("#contact").fadeTo("slow", 1, function () {
-        let e = $("#success");
+    setTimeout(() => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has("messageStatus")) {
+        $("#status").fadeOut();
+        $("#preloader").delay(500).fadeOut("slow");
+        let messageStatus = params.get("messageStatus");
+        if (messageStatus === "success") {
+          window.scrollTo({
+            top: $("#contact").offset().top,
+            left: 0,
+            behavior: "smooth",
+          });
+          $("#contact").fadeTo("slow", 1, function () {
+            let e = $("#success");
 
-        e.fadeIn();
-        e.queue(function () {
-          setTimeout(function () {
-            e.dequeue();
-          }, 5000);
-        });
-        e.fadeOut("slow");
-      });
-    }
-
+            e.fadeIn();
+            e.queue(function () {
+              setTimeout(function () {
+                e.dequeue();
+              }, 3000);
+            });
+            e.fadeOut("slow");
+          });
+        }
+      }
+    }, 0);
     $(function () {
       $("#contact-form").validate({
         rules: {
